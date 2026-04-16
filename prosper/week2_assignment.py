@@ -12,7 +12,8 @@ def division (a,b):
 		print(f"Error: {a} is not divisible by {b}")
 	return a / b
 
-while True:
+start = True
+while start:
 	print ("Simple Calculation")
 	print("1. Add")
 	print("2. Subtraction")
@@ -20,27 +21,28 @@ while True:
 	print("4. Division")
 
 	choice = input("Enter an operator (1 - 4): ")
-
-	while choice == "1" or "2" "3" or "4":
-	
-
-		if choice in ["1","2","3","4"]:
-			num1 = float(input("Enter the first number: "))
-			num2 = float(input("Enter the second number: "))
-
-			if choice == "1":
-				result = add(num1,num2)
-			elif choice == "2":
-				result = subtration(num1,num2)
-			elif choice == "3":
-				result = multiplication(num1,num2)
-			elif choice == "4":
-				result = division(num1,num2)
-
-			print("Result:", result)
+	num1 = float(input("Enter the first number: "))
+	num2 = float(input("Enter the second number: "))
+	if choice == "1" or choice == "2" or choice == "3" or choice =="4":
+		result = 0
+		if choice == "1":
+			result = add(num1,num2)
+		elif choice == "2":
+			result = subtration(num1,num2)
+		elif choice == "3":
+			result = multiplication(num1,num2)
+		elif choice == "4":
+			result = division(num1,num2)
 		
+		print("Result:", result)
+		
+	else:
+		end = input("Do you want to exit the program? (yes/no): ").lower()
+		if end == "yes":	
+			start = False
+			print("Exiting the program")
 		else:
-			print("Error: You entered the wrong number. Please select number (1 - 2)")
-
+			continue
+		 
 
 
